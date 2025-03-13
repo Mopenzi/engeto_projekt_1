@@ -40,10 +40,12 @@ users = {
     "liz": "pass123"
     }
 
-user_name = input("Zadej přihlašovací jméno: ")
-user_password = input("Zadej přihlašovací heslo: ")
+separator = 40 * "-"
+
+user_name = input("username:")
+user_password = input("password: ")
 
 if user_name in users and user_password == users[user_name]:
-    pass 
+    print(separator)
 else:
-    pass
+    print("unregistered user, terminating the program..")
