@@ -47,5 +47,11 @@ user_password = input("password: ")
 
 if user_name in users and user_password == users[user_name]:
     print(separator)
+    print("Welcome to the app,", user_name)
+    print(f"We have {len(TEXTS)} texts to be analyzed.")
+    print(separator)
+    user_choice = input(f"Enter a number btw. 1 and {len(TEXTS)} to select: ")
+    print(separator)
+
 else:
     print("unregistered user, terminating the program..")
