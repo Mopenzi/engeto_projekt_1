@@ -54,7 +54,8 @@ if user_name in users and user_password == users[user_name]:
     user_choice = input(f"Enter a number btw. 1 and {len(TEXTS)} to select: ")
     print(separator)
     if user_choice.isdecimal():
-        if int(user_choice) in range(1, len(TEXTS) + 1):
+        user_choice = int(user_choice)
+        if user_choice in range(1, len(TEXTS) + 1):
             pass
         else:
             print("you entered a number out of range, terminating the program..")
