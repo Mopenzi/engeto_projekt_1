@@ -33,3 +33,17 @@ TEXTS = [
     garpike and stingray are also present.'''
 ]
 
+users = {
+    "bob": "123",
+    "ann": "pass123",
+    "mike": "password123",
+    "liz": "pass123"
+    }
+
+user_name = input("Zadej přihlašovací jméno: ")
+user_password = input("Zadej přihlašovací heslo: ")
+
+if user_name in users and user_password == users[user_name]:
+    pass 
+else:
+    pass
