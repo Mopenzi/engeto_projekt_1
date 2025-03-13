@@ -53,6 +53,14 @@ if user_name in users and user_password == users[user_name]:
     print(separator)
     user_choice = input(f"Enter a number btw. 1 and {len(TEXTS)} to select: ")
     print(separator)
+    if user_choice.isdecimal():
+        if user_choice in range(1, len(TEXTS)):
+            pass
+        else:
+            print("you entered a number out of range, terminating the program..")
+        
+    else:
+        print("you did not input a whole number, terminating the program..")
 
 else:
     print("unregistered user, terminating the program..")
