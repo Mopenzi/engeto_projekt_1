@@ -56,7 +56,34 @@ if user_name in users and user_password == users[user_name]:
     if user_choice.isdecimal():
         user_choice = int(user_choice)
         if user_choice in range(1, len(TEXTS) + 1):
-            pass
+            words = TEXTS[user_choice - 1].split()
+            count_of_words = len(words)
+            count_of_titlecase = 0
+            count_of_uppercase = 0
+            count_of_lowercase = 0
+            count_of_numbers = 0
+            sum_of_numbers = 0
+            occurences = {}
+
+            for word in words:
+                if word.isupper():
+                    count_of_uppercase += 1
+                if word.istitle():
+                    count_of_titlecase += 1
+                if word.islower():
+                    count_of_lowercase += 1
+                if word.isdecimal():
+                    count_of_numbers += 1
+                    sum_of_numbers += int(word) 
+
+            print(f"There are {count_of_words} words in the selected text.")
+            print(f"There are {count_of_titlecase} titlecase words.")
+            print(f"There are {count_of_uppercase} uppercase words.")
+            print(f"There are {count_of_lowercase} lowercase words.")
+            print(f"There are {count_of_numbers} numeric strings.")
+            print(f"The sum of all the numbers {sum_of_numbers}")
+            print(separator)
+
         else:
             print("you entered a number out of range, terminating the program..")
         
