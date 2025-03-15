@@ -63,7 +63,7 @@ if user_name in users and user_password == users[user_name]:
             count_of_lowercase = 0
             count_of_numbers = 0
             sum_of_numbers = 0
-            occurences = {}
+            occurrences = {}
 
             for word in words:
                 if word.isupper():
@@ -75,10 +75,10 @@ if user_name in users and user_password == users[user_name]:
                 if word.isdecimal():
                     count_of_numbers += 1
                     sum_of_numbers += int(word) 
-                if len(word) in occurences:
-                    occurences[len(word)] += 1
+                if len(word) in occurrences:
+                    occurrences[len(word)] += 1
                 else:
-                    occurences[len(word)] = 1
+                    occurrences[len(word)] = 1
         
 
             print(f"There are {count_of_words} words in the selected text.")
@@ -91,8 +91,8 @@ if user_name in users and user_password == users[user_name]:
 
             print(f"LEN|{'OCCURENCES':^20}|NR")            
             print(separator)
-            for key in sorted(occurences):
-                print(f"{key:>3}|{occurences[key] * '*':<20}|{occurences[key]} ")
+            for key in sorted(occurrences):
+                print(f"{key:>3}|{occurrences[key] * '*':<20}|{occurrences[key]} ")
 
 
         else:
