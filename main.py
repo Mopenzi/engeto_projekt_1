@@ -89,7 +89,7 @@ if user_name in users and user_password == users[user_name]:
             print(f"The sum of all the numbers {sum_of_numbers}")
             print(separator)
 
-            print(f"LEN|{'OCCURENCES':^20}|NR")            
+            print(f"LEN|{'OCCURRENCES':^20}|NR")            
             print(separator)
             for key in sorted(occurrences):
                 print(f"{key:>3}|{occurrences[key] * '*':<20}|{occurrences[key]} ")
