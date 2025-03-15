@@ -74,6 +74,11 @@ if user_name in users and user_password == users[user_name]:
                 if word.isdecimal():
                     count_of_numbers += 1
                     sum_of_numbers += int(word) 
+                if len(word) in occurences:
+                    occurences[len(word)] += 1
+                else:
+                    occurences[len(word)] = 1
+        
 
             print(f"There are {count_of_words} words in the selected text.")
             print(f"There are {count_of_titlecase} titlecase words.")
@@ -82,6 +87,11 @@ if user_name in users and user_password == users[user_name]:
             print(f"There are {count_of_numbers} numeric strings.")
             print(f"The sum of all the numbers {sum_of_numbers}")
             print(separator)
+
+            print(occurences)
+            for key in sorted(occurences):
+                print(key, occurences[key])
+
 
         else:
             print("you entered a number out of range, terminating the program..")
