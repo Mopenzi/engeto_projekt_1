@@ -5,6 +5,8 @@ author: Michal Černý
 email: merny.cichal@seznam.cz
 """
 
+import string
+
 TEXTS = [
     '''Situated about 10 miles west of Kemmerer,
     Fossil Butte is a ruggedly impressive
@@ -55,8 +57,10 @@ if user_name in users and user_password == users[user_name]:
     if user_choice.isdecimal():
         user_choice = int(user_choice)
         if user_choice in range(1, len(TEXTS) + 1):
-            words = TEXTS[user_choice - 1].split()          #rozdelim na slova
-            words = [word.rstrip(",.") for word in words]   #z konce kazdeho slova odstranim , a . 
+            #rozdelim na slova
+            words = TEXTS[user_choice - 1].split()      
+            # z konce kazdeho slova odstranim znaky !"#$%&'()*+,-./:;<=>?@[\]^_{|}~`
+            words = [word.rstrip(string.punctuation) for word in words]
             count_of_words = len(words)
             count_of_titlecase = 0
             count_of_uppercase = 0
